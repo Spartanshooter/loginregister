@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script type="text/javascript">
+        let users = {pepe : {username : "pepe", email : "pepe@gmail.com", password : "pepe123"}, lola : {username : "lola", email : "lola@gmail.com", password : "lola123"}};
+
+        function fer_login() {
+            console.log("Dins de la funcio");
+            let userEl = document.getElementById("userL");
+            let passEl = document.getElementById("passL");
+
+            if (users[userEl.value].password == passEl.value) {
+                alert("Logged succesfully as "+userEl.value)
+            }
+            else{
+                alert('Failed');
+            }
+        }
+        function fer_registre() {
+            let userREL = document.getElementById("userR");
+            let passREL = document.getElementById("passR");
+            let emailEL = document.getElementById("email");
+
+            try {
+                if (users[userREL.value].username == userREL.value) {
+                    alert("Voste ja esta registrat")
+                } else {
+                    alert("registrat correctament sr/a " + userREL.value)           
+                }
+            } catch (error) {
+                alert("registrat correctament sr/a " + userREL.value)
+                
+            } 
+        }
+    </script>
+</head>
+<body>
+<form style="background-color: lightgray;">
+    <h3>Login</h3>
+    <label>Name: </label>
+    <br>
+    <input type="text" name="username" id="userL">
+    <br>
+    <label>Password: </label>
+    <br>
+    <input type="Password" name="password" id="passL">
+    <br>
+    <input type="Button" name="Submit" value="login" onclick="fer_login()">
+</form>
+
+<form style="background-color: lightblue;">
+    <h3>Register</h3>
+    <label>Name: </label>
+    <br>
+    <input type="text" name="username" id="userR">
+    <br>
+    <label>Email: </label>
+    <br>
+    <input type="Email" name="email">
+    <br>
+    <label>Password: </label>
+    <br>
+    <input type="Password" name="password" id="passR">
+    <br>
+    <input type="Button" name="Submit" value="register" onclick="fer_registre()">
+</form>
+
+
+</body>
+</html>
